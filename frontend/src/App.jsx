@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import GameCard from './components/GameCard'
+const API_URL = import.meta.env.VITE_API_URL || ''
+
+
 
 function App() {
   const [listings, setListings] = useState([])
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    fetch(`/api/games${search ? `?search=${search}` : ''}`)
+    fetch(`${API_URL}/api/games${search ? `?search=${search}` : ''}`)
       .then(res => res.json())
       .then(data => setListings(data))
   }, [search])

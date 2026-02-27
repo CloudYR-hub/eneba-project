@@ -4,7 +4,9 @@ const pool = require('./db')
 const app = express()
 const PORT = 3000
 
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://your-vercel-url.vercel.app']
+}))
 app.use(express.json())
 
 app.use('/api/games', require('./routes/games'))
