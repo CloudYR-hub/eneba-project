@@ -5,7 +5,7 @@ const app = express()
 const PORT = 3000
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://eneba-project-sigma.vercel.app/']
+  origin: ['http://localhost:5173', 'https://eneba-project-sigma.vercel.app']
 }))
 app.use(express.json())
 
